@@ -1,12 +1,8 @@
 <script>
-  import {Login, Counter} from './Login.svelte';
+  import Login from './Login.svelte';
 </script>
 
-{#if !$islogin}
-  <Login />
-{:else}
-  <Counter />
-{/if}
+<Login />
 
 <style>
 

@@ -13,10 +13,6 @@
       $account = username;
       username = "";
       password = "";
-      return {
-        status: 302,
-        redirect: "/account"
-      }
     }
 
   }
@@ -40,16 +36,17 @@
     margin: auto;
     text-align: center;
   }
-  input{background-color:#c4d0d8;
-        margin:5px;
-       }
+  input {
+    background-color:#c4d0d8;
+    margin:5px;
+  }
   
-  #head{
+  #head {
     font-weight: bold;
     font-size:32px;
   }
   
-  #botton{
+  #botton {
     background-color:#ffde59;
     padding:2px;
     border-radius:7px;
