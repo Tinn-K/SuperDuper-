@@ -13,7 +13,7 @@
 </div>
 
 <!--แถบปุ่มเปลี่ยนหน้า-->
-<div id="nav"><span id="name">{$accounts[$account].username}: {$accounts[$account].name} </span>
+<div id="nav">
 <button on:click={()=>$mode="home"}>หน้าแรก</button>
 <button on:click={()=>$mode="list"}>รายชื่อวิชา</button>
 
@@ -23,7 +23,11 @@
 {/if}
   
 <button on:click={()=>$isLogin=false}>ออกจากระบบ</button>
+
+<span id="name">{$accounts[$account].username}: {$accounts[$account].name}&nbsp;&nbsp;</span>
 </div>
+
+
 
 <!--แสดงหน้าต่างๆ-->
 {#if $mode == "home"}
@@ -45,10 +49,17 @@
     <Subject />
   {/if}
 {:else if $mode == "update_submit"}
-  <Submitted />
+  <SubjectAdmin />
 {/if}
+<br>
 
 
+
+
+
+
+
+    
 <style>
   h1 {
     padding-top:200px;
@@ -57,15 +68,18 @@
   }
   
   #name {
+    text-align: center;
     color: white;
-    width: 200px;
-    display: inline-block;
-    padding-left: 10px;
+    float: right;
+    clear: right;
+    margin: auto;
   }
+  
   #nav {
     background-color:#004aad;
     margin-left: auto; 
-    margin-right: 0;
+    margin-right: auto;
+    padding-left: 10px;
   }
   
   button {

@@ -123,6 +123,7 @@
       <th>รหัสนักศึกษา</th>
       <th>ชื่อ-สกุล</th>
       <th>ลบจากโควต้า</th>
+      <th></th>>
     </tr>
     {#each lists as s_list}
       <tr>
@@ -155,9 +156,14 @@
 </div>
 {/if}
 
+
+
+  
 <style>
   input{
     padding:3px;
+    margin:auto;
+    text-align: center;
   }
   
   table{
@@ -165,18 +171,44 @@
     border:2px solid black;
     margin:auto;
   }
-  
-  td,th{
+
+  tr:nth-child(even) {
+      background-color: #A5CAF1
+  }
+  tr:nth-child(2n+1) {
+      background-color: #78B3F1
+  }
+
+  td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 30px;
     text-align: center;
-    border:2px solid black;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  th {
+    background-color:#3498DB;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 25px;
+    text-align: center;    
     padding-left: 12px;
     padding-right: 12px;
   }
 
   div{
     margin:auto;
-    text-align:center;
-     }
+    text-align: center;
+  }
+  
+  button {
+    padding:5px;
+    background-color: #38b6ff;
+    cursor: pointer;
+    border-radius: 7px;
+  }
   #quota{
     border:none;  }
   #searchbutton {

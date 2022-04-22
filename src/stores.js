@@ -65,7 +65,7 @@ let subject_data = [
     quota: 72,
     submitted: 36,
     section: "760003",
-    period: "13:30-16:30",
+    period: "17:30-20:30",
     date: "วันอังคาร",
   },
   

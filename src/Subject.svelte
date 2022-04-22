@@ -105,31 +105,32 @@ function request_quota(quota_id, account_id, section) {
   tr:nth-child(2n+1) {
       background-color: #78B3F1
   }
-  
-  td,th{
-    text-align: center;
-    /*border:2px solid black;*/
-    padding-left: 12px;
-    padding-right: 12px;
-  }
 
   td {
     padding-top: 5px;
     padding-bottom: 5px;
+    height: 30px;
+    text-align: center;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   th {
+    background-color:#3498DB;
     padding-top: 10px;
     padding-bottom: 10px;
+    height: 25px;
+    text-align: center;    
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   div{
     margin:auto;
     text-align: center;
   }
-  #quota{
-    border:none;  }
-  #searchbutton {
+  
+  button {
     padding:5px;
     background-color: #38b6ff;
     cursor: pointer;

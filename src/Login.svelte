@@ -4,7 +4,8 @@
   let username = "";
   let password = "";
   let error = "";
-  
+
+  //เช็คล็อกอิน
   function checklogin() {
     if(!(username in $accounts) || $accounts[username].password != password) {
       error = "Incorrect username or password"
@@ -18,18 +19,23 @@
   }
 </script>
 
+<!--กรอบที่ล็อกอิน-->
 <div>
   <p>
   <span id ="Login"><b>Login</b></span>
   <br>
   <br>
 <input placeholder="Username" bind:value={username}><br>
-<input type="password" placeholder="Password" bind:value={password}><br>
-  <span id="error">{error}</span>
+<input type="password" placeholder="Password" bind:value={password}><br> 
+    {#if error != ""}
+      <span id="error">{error}</span>
+    {/if}
   <br>
 <button id=button on:click={checklogin}>Log in</button>
   </p>
 </div>
+
+
 
 <style>
   div {
@@ -45,7 +51,7 @@
 
   
   p {
-    background-color: #2B79CD ;
+    background-color: #2B79CD;
     padding-top: 50px;
     padding-bottom: 50px;
     margin:auto;
