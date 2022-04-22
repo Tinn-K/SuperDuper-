@@ -1,13 +1,14 @@
 <script>
   import Login from './Login.svelte';
-  import home from './home.svelte';
+  import Home from './Home.svelte';
   import {isLogin} from './stores.js';
 </script>
 
+<!--ตรวจสอบการล็อกอิน-->
 {#if !$isLogin}
   <Login />
 {:else}
-  <home />
+  <Home />
 {/if}
 
 <style>

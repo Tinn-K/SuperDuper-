@@ -1,53 +1,88 @@
 <script>
-  import { accounts,account,isLogin } from "./stores.js";
+  import { accounts,account,isLogin,mode} from "./stores.js";
 
   let username = "";
   let password = "";
+  let error = "";
+  
   function checklogin() {
-    /* เขียนโลจิกตรงนี้!!!*/
     if(!(username in $accounts) || $accounts[username].password != password) {
-      alert("ควาย")
+      error = "Incorrect username or password"
     } else {
-      alert("ฉลาด")
       $isLogin = true;
       $account = username;
       username = "";
       password = "";
+      $mode = "home";
     }
-
   }
 </script>
 
-<p>
-  <span id ="head">Login</span>
+<div>
+  <p>
+  <span id ="Login"><b>Login</b></span>
   <br>
   <br>
-<input placeholder="username" bind:value={username}><br>
+<input placeholder="Username" bind:value={username}><br>
 <input type="password" placeholder="Password" bind:value={password}><br>
+  <span id="error">{error}</span>
   <br>
-<botton id=botton on:click={checklogin}>Log in</botton>
-</p>
+<button id=button on:click={checklogin}>Log in</button>
+  </p>
+</div>
 
 <style>
-  p {
-    background-color: #38b6ff;
-    padding-top: 50px;
-    padding-bottom: 700px;
-    margin: auto;
-    text-align: center;
+  div {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url("https://tu.ac.th/uploads/news-tu/banner/banner64/vr32.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
   }
+
+  
+  p {
+    background-color: #2B79CD ;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin:auto;
+    text-align: center;
+    width:300px;
+    height:170px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -146px;
+    margin-left: -150px;
+    border:solid black;
+
+
+
+  }
+  
   input {
     background-color: #c4d0d8;
     margin: 5px;
   }
   
-  #head {
+  #Login {
+    
     font-weight: bold;
     font-size: 32px;
   }
+
+  #error {
+    color: red;
+    background-color:white;
+    border-radius: 7px;
+    padding: 2px;
+  }
   
-  #botton {
-    background-color: #ffde59;
+  #button {
+    background-color: #ffd13f;
     padding: 2px;
     border-radius: 7px;
     padding: 5px;
